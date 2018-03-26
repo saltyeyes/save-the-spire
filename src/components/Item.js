@@ -35,6 +35,11 @@ class Item extends Component {
                 backgroundColor: this.state.hover ? '#df2e26' : '#ef3e36',
                 border: '1px solid #df2e26'
             };
+        } else if (this.props.type === 'Potion') {
+            specificStyle = {
+                backgroundColor: this.state.hover ? '#C4E717' : '#D7EE62',
+                border: '1px solid #C4E717'
+            };
         }
 
         if (this.props.bottled === true) {
