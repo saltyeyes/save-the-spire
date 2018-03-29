@@ -135,7 +135,7 @@ const initialState = {
         hand_size: 5,
         cards: [],
         relics: [],
-        potions: []
+        potions: ["Potion Slot", "Potion Slot", "Potion Slot"]
     },
     searchTerm: '',
     upgraded: false
