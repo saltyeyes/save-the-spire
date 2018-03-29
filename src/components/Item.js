@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+import ToolTip from './Tooltip'
 
 class Item extends Component {
 
-    state = {hover: false};
+    state = {
+        hover: false,
+        tooltip: false
+    };
 
     toggleHover = () => {
         this.setState({hover: !this.state.hover});
+        setTimeout(() => this.setState({tooltip: !this.state.tooltip}), 100)
     };
 
     createStyle() {
@@ -55,6 +60,20 @@ class Item extends Component {
 
     render() {
         const style = this.createStyle();
+
+        if (this.props.type == 'Potion') {
+            if (this.props.active) {
+                style.border = "2px solid red"
+            }
+
+            return (
+                <div id={this.props.id} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover} onClick={this.props.onClick} style={style}>
+                    <img src={`/images/potions/${this.props.isPlaceholder ? "placeholder" : this.props.name.split(" ")[0].toLowerCase()}.png`} />
+                    <ToolTip active={this.state.tooltip} id={this.props.id} style={this.tooltipStyle} description={this.props.item.DESCRIPTION} title={this.props.name} />
+                </div>
+
+            )
+        }
 
         return (
             <div onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover} onClick={this.props.onClick} style={style}>

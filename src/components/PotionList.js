@@ -5,7 +5,7 @@ import { actions } from '../utils/ReduxStore'
 import Modal from 'react-modal';
 import potions from "./PotionsJSON";
 
-import PotionItem from "./PotionItem";
+import Item from "./Item";
 
 class PotionList extends Component {
 
@@ -44,26 +44,28 @@ class PotionList extends Component {
                 <label>Potions:</label>
                 <div style={styles.potionlist}>
                     {this.props.potions.map((potion, i) =>
-                        <PotionItem type="Potion"
+                        <Item type="Potion"
                             name={potion} 
                             onClick={() => {this.setState({modalIndex: i}); this.setState({showModal: true})}}
                             key={i}
                             item={potions[potion]}
                             id={`potion-${i}`}
                             active={false}
+                            isPlaceholder={potion == "Potion Slot"}
                         />
                     )}
                 </div>
                 <Modal isOpen={this.state.showModal} style={{content: styles.modal}}>
                     <div style={styles.potionlist}>
                         {this.sortedPotions.map((potion, i) => 
-                            <PotionItem type="Potion" 
+                            <Item type="Potion" 
                                 onClick={() => {this.setState({showModal: false}); this.props.actions.addPotion(this.state.modalIndex, potion)}}
                                 name={potion}
                                 key={potion}
                                 item={potions[potion]}
                                 id={`potion-popup-${i}`}
                                 active={potion == this.props.potions[this.state.modalIndex]}
+                                isPlaceholder={potion == "Potion Slot"}
                             />
                         )}
                     </div>

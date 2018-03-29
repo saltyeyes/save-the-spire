@@ -11,7 +11,7 @@
     "react-portal-tooltip": "^2.3.0",
     "react-redux": "^5.0.7",
     "react-redux-connect": "^0.1.0",
-    "react-scripts": "1.1.1",
+    "react-scripts": "2.0.0-next.b2fd8db8",
     "redux": "^3.7.2"
   },
   "scripts": {
@@ -19,5 +19,18 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">1%",
+      "last 4 versions",
+      "Firefox ESR",
+      "not ie < 11"
+    ]
   }
 }

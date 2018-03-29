@@ -1,0 +1,28 @@
+.tooltip {
+  min-height: 64px;
+  background: transparent;
+  padding: 0;
+  box-sizing: border-box;
+  box-shadow: none;
+  font-family: "Kreon", serif;
+  color: white;
+  font-size: 16px;
+  min-width: 160px;
+  max-width: 320px;
+  border-style: solid;
+  border-width: 18px;
+  -moz-border-image: url(/images/tooltip/tip.png) 18 stretch;
+  -webkit-border-image: url(/images/tooltip/tip.png) 18 stretch;
+  -o-border-image: url(/images/tooltip/tip.png) 18 stretch;
+  border-image: url(/images/tooltip/tip.png) 18 fill stretch;
+  image-rendering: -moz-crisp-edges;
+  image-rendering:   -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+.description {
+  line-height: 1.2em;
+  margin-top: 4px;
+}
